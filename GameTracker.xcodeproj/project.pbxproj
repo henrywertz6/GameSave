@@ -11,6 +11,11 @@
 		2FDA15EC2B83DC88003969EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15EB2B83DC88003969EA /* ContentView.swift */; };
 		2FDA15EE2B83DC89003969EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA15ED2B83DC89003969EA /* Assets.xcassets */; };
 		2FDA15F12B83DC89003969EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA15F02B83DC89003969EA /* Preview Assets.xcassets */; };
+		2FDA15FB2B83DCF8003969EA /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15FA2B83DCF8003969EA /* SearchView.swift */; };
+		2FDA15FD2B83DD00003969EA /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15FC2B83DD00003969EA /* BrowseView.swift */; };
+		2FDA15FF2B83DD09003969EA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15FE2B83DD09003969EA /* ProfileView.swift */; };
+		2FDA16012B83DD0F003969EA /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA16002B83DD0F003969EA /* Game.swift */; };
+		2FDA16032B83DDE1003969EA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA16022B83DDE1003969EA /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		2FDA15EB2B83DC88003969EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2FDA15ED2B83DC89003969EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FDA15F02B83DC89003969EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2FDA15FA2B83DCF8003969EA /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		2FDA15FC2B83DD00003969EA /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		2FDA15FE2B83DD09003969EA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2FDA16002B83DD0F003969EA /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2FDA16022B83DDE1003969EA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,9 @@
 		2FDA15E82B83DC88003969EA /* GameTracker */ = {
 			isa = PBXGroup;
 			children = (
+				2FDA15F92B83DCB2003969EA /* ViewModels */,
+				2FDA15F82B83DCA9003969EA /* Models */,
+				2FDA15F72B83DCA1003969EA /* Views */,
 				2FDA15E92B83DC88003969EA /* GameTrackerApp.swift */,
 				2FDA15EB2B83DC88003969EA /* ContentView.swift */,
 				2FDA15ED2B83DC89003969EA /* Assets.xcassets */,
@@ -65,6 +78,32 @@
 				2FDA15F02B83DC89003969EA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2FDA15F72B83DCA1003969EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2FDA15FA2B83DCF8003969EA /* SearchView.swift */,
+				2FDA15FC2B83DD00003969EA /* BrowseView.swift */,
+				2FDA15FE2B83DD09003969EA /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2FDA15F82B83DCA9003969EA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2FDA16002B83DD0F003969EA /* Game.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2FDA15F92B83DCB2003969EA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2FDA16022B83DDE1003969EA /* Network.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FDA15FD2B83DD00003969EA /* BrowseView.swift in Sources */,
+				2FDA16012B83DD0F003969EA /* Game.swift in Sources */,
 				2FDA15EC2B83DC88003969EA /* ContentView.swift in Sources */,
+				2FDA15FF2B83DD09003969EA /* ProfileView.swift in Sources */,
+				2FDA15FB2B83DCF8003969EA /* SearchView.swift in Sources */,
+				2FDA16032B83DDE1003969EA /* Network.swift in Sources */,
 				2FDA15EA2B83DC88003969EA /* GameTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
