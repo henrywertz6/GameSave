@@ -8,45 +8,40 @@
 import SwiftUI
 
 struct BrowseView: View {
-    @EnvironmentObject var network: Network
-    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    @StateObject var viewModel = BrowseViewModel()
+    @EnvironmentObject var userEnvironment: UserEnvironment
     var body: some View {
         ScrollView {
-            Text("Games")
-                .font(.title)
-                .bold()
-            
-            LazyVGrid(columns: gridItemLayout) {
-                ForEach(network.games) { game in
-                        AsyncImage(
-                            url: URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_small_2x/\(game.cover?.image_id ?? "co2uuv").jpg"),
-                            content: { image in
+                let columns = [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)]
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.games) { game in
+                        NavigationLink(destination: DetailView(game: game)) {
+                            AsyncImage(url: URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/\(game.image_id).jpg")) { image in
                                 image.resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .cornerRadius(7)
-//                                    .overlay(RoundedRectangle(cornerRadius: 7).stroke(.gray, lineWidth: 2))
-                                    
-                            },
-                            placeholder: {
-                                AsyncImage(url: URL(string: "https://placehold.co/180x256"))
-                            })
-                            
-                    
+                                    .scaledToFill()
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                            } placeholder: {
+                                
+                            }
+                            .frame(width: 100, height: 150)
+                        }
+                    }
+                }
+                .navigationTitle("Browse")
+            .onAppear {
+                if !viewModel.dataLoaded {
+                    viewModel.loadRecentGames()
                 }
             }
         }
-        .onAppear {
-            network.getGames()
-        }
     }
+    
 }
 
-enum apiError: Error {
-    case invalidURL
-    case invalidResponse
-    case invalidData
-}
+
 
 #Preview {
-    BrowseView().environmentObject(Network())
+    NavigationStack {
+        BrowseView().environmentObject(UserEnvironment())
+    }
 }

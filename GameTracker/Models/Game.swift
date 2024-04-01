@@ -8,19 +8,15 @@
 import Foundation
 
 struct Game: Codable, Identifiable {
-//    let id: Int
     let id: Int
     let name: String
-    let cover: Cover?
-//    let released: String
-//    let metacritic: Int
-//    let background_image: String
+    let total_rating: Double?
+    let total_rating_count: Int?
+    let rating: Double?
+    let image_id: String
+
 }
 
-struct Cover: Codable {
-    let id: Int
-    let image_id: String
-}
 
 struct GameResponse: Decodable {
     let results: [Game]

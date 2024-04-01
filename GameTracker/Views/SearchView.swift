@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct SearchView: View {
+    @StateObject private var viewModel = SearchViewModel()
+
     var body: some View {
-        Text("search view")
+        VStack {
+            TextField("Search video games...", text: $viewModel.searchText)
+                .padding()
+            
+            List(viewModel.searchResults) { game in
+                Text(game.name)
+            }
+        }
+        .onDisappear {
+            viewModel.cancellable?.cancel()
+        }
+        .onAppear {
+            viewModel.setupDebounceSubscription()
+        }
+        
+        
     }
 }
 
