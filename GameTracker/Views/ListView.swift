@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ListView: View {
+    @EnvironmentObject var userEnvironment: UserEnvironment
+    @StateObject var viewModel = ListViewModel()
     var body: some View {
         NavigationStack {
             Text("this is the list view")
@@ -16,5 +18,5 @@ struct ListView: View {
 }
 
 #Preview {
-    ListView()
+    ListView().environmentObject(UserEnvironment())
 }

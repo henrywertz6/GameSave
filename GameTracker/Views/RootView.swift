@@ -20,7 +20,7 @@ struct RootView: View {
             .tabItem { Label("Browse", systemImage: "arcade.stick.console") }
             SearchView()
                 .tabItem { Label("Search", systemImage: "magnifyingglass")}
-            ListView()
+            CreateListView()
                 .tabItem { Label("Lists", systemImage: "list.bullet")}
             NavigationStack {
                 ProfileView(showSignInView: $showSignInView)

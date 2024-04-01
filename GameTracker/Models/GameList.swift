@@ -1,5 +1,5 @@
 //
-//  List.swift
+//  GameList.swift
 //  GameTracker
 //
 //  Created by Henry Wertz on 4/1/24.
@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct List: Codable {
+struct GameList: Codable {
     let id: UUID
     let title: String
-    let games: [Game]
+    let userId: String
+    let games: [Int]
+    let isPublic: Bool
     
 }

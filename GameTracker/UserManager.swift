@@ -149,6 +149,18 @@ final class UserManager {
         
         
     }
+    
+    func createList(userId: String, initialGames: [Game], title: String, isPublic: Bool) async throws {
+        let listRef = db.collection("lists")
+        var gameIdList: [Int] = []
+        for game in initialGames {
+            gameIdList.append(game.id)
+        }
+        let listObject = GameList(id: UUID(), title: title, userId: userId, games: gameIdList, isPublic: isPublic)
+        
+        try listRef.addDocument(from: listObject)
+        
+    }
 
     
     

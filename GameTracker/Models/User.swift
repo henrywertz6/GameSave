@@ -16,7 +16,6 @@ struct User: Codable {
     var following: [String]?
     var datecreated: Date
     var email: String
-    var lists: [List]?
 }
 
 
