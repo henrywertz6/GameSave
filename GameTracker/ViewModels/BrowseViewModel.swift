@@ -18,6 +18,7 @@ class BrowseViewModel: ObservableObject {
         let db = Firestore.firestore()
         // Construct the initial query with order, limit, and pagination cursor (empty for first page)
         let query = db.collection("games")
+            .whereField("category", isEqualTo: 0)
             .order(by: "rating", descending: true)
             .limit(to: 25)
         

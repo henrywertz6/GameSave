@@ -51,9 +51,21 @@ import Combine
     deinit {
         cancellable?.cancel()
     }
+    
+    func getYearFromTimeStamp(timestamp: Double) -> String? {
+        let date = Date(timeIntervalSince1970: timestamp)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        let yearString = formatter.string(from: date)
+        return yearString
+        
+    }
 }
 
 struct GameSearchResult: Codable, Identifiable {
     let id: String
     let name: String
+    let image_id: String?
+    let first_release_date: Double?
 }

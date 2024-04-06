@@ -24,7 +24,7 @@ class ListViewModel: ObservableObject {
     @Published var currentList: GameList? = nil
     
     
-    func createList(userId: String, initialGames: [Game], title: String, isPublic: Bool) async throws {
+    func createList(userId: String, initialGames: [String], title: String, isPublic: Bool) async throws {
         try await UserManager.shared.createList(userId: userId, initialGames: initialGames, title: title, isPublic: isPublic)
     }
     

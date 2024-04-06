@@ -5,32 +5,21 @@ struct CreateListView: View {
     @State private var listName: String = ""
     @State private var testText: String = ""
     @State private var isPublic: Bool = true
-    @State private var selectedGameIDs: Set<String> = []
-    @State private var showAddGameCover: Bool = false
+    @State private var selectedGameIDs: [String] = []
+    @State private var selectedGames: [ListObject] = []
     @StateObject var viewModel = ListViewModel() // View model for data handling
     @StateObject private var searchViewModel = SearchViewModel()
+    @State private var showToast = false
+    @Binding var isPresented: Bool
     
     var body: some View {
-        NavigationView {
-//            Form {
-//                Section {
-//                    TextField("List Name", text: $listName)
-//                    Picker("Privacy", selection: $isPublic) {
-//                        Text("Public").tag(true)
-//                        Text("Private").tag(false)
-//                    }
-//                    // Add a TextEditor for description if needed
-//                } header: {
-//                    Text("List Details")
-//                }
-//                Button("Create List") {
-//                    // Call view model function to save the list with selected games
-//                }
-//            }
-            
-            Button() {
-                showAddGameCover = true
-            } label: {
+        VStack {
+            TextField("List title...", text: $listName)
+                .padding()
+                .textInputAutocapitalization(.never)
+                .background(Color.gray.opacity(0.3))
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+            NavigationLink(destination: AddGamesView(selectedGameIDs: $selectedGameIDs, selectedGames: $selectedGames)) {
                 Text("Add Games")
                     .padding()
                     .padding()
@@ -41,43 +30,77 @@ struct CreateListView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
             }
             
-            
-            
-            
-            Spacer()
-            
-        }
-        .sheet(isPresented: $showAddGameCover, content: {
-            VStack {
-                TextField("Search video games...", text: $searchViewModel.searchText)
-                    .padding()
-                
-                List(searchViewModel.searchResults) { game in
-                    Text(game.name)
+            let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    
+                    ForEach(Array(selectedGames)) { game in
+                        
+                        HStack {
+                            AsyncImage(url: URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/\(game.image_id ?? "bingus").jpg")) { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 100, height: 150)
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                            } placeholder: {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color.gray.opacity(0.2))
+                                    .frame(width: 100, height: 150)
+                                    .overlay(
+                                        Text(game.name)
+                                            .font(.caption)
+                                            .foregroundColor(.black)
+                                            .lineLimit(2)
+                                            .multilineTextAlignment(.center)
+                                            .padding(4)
+                                    )
+                            }
+                            .frame(width: 100, height: 150)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                            )
+                            .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
+                            
+                            
+                            
+                            
+                        }
+                    }
                 }
             }
-            .onDisappear {
-                searchViewModel.cancellable?.cancel()
+            
+            Button() {
+                Task {
+                    guard let user = userEnvironment.user else {return}
+                    try await viewModel.createList(userId: user.uid, initialGames: Array(selectedGameIDs), title: listName, isPublic: true)
+                    showToast = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        isPresented = false
+                    }
+                }
+            } label: {
+                Text("Create List")
+                    .padding()
+                    .padding()
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height:55)
+                    .background(Color.blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
             }
-            .onAppear {
-                searchViewModel.setupDebounceSubscription()
-            }
-        })
-        .navigationTitle("New List")
-    }
-    
-    private func toggleGameSelection(_ gameID: String) {
-        if selectedGameIDs.contains(gameID) {
-            selectedGameIDs.remove(gameID)
-        } else {
-            selectedGameIDs.insert(gameID)
+            Spacer()
         }
+        .toast(message: "List created", isShowing: $showToast)
+        .padding()
+        .navigationTitle("New List")
+        
     }
 }
 
 
 #Preview {
     NavigationStack {
-        CreateListView().environmentObject(UserEnvironment())
+        CreateListView(isPresented: .constant(false)).environmentObject(UserEnvironment())
     }
 }

@@ -11,7 +11,7 @@ struct GameList: Codable {
     let id: UUID
     let title: String
     let userId: String
-    let games: [Int]
+    let games: [String]
     let isPublic: Bool
     
 }

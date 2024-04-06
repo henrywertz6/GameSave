@@ -23,20 +23,14 @@
 		2F14B9582BBA1468000257CC /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F14B9572BBA1468000257CC /* GameData.swift */; };
 		2F2AEDBA2BA4C0B80048BC57 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2AEDB92BA4C0B80048BC57 /* ForgotPasswordView.swift */; };
 		2F377EF02B8D320B0066404B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F377EEF2B8D320B0066404B /* GoogleService-Info.plist */; };
-		2F377EF32B8D34DB0066404B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377EF22B8D34DB0066404B /* FirebaseAnalytics */; };
-		2F377EF52B8D34DB0066404B /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377EF42B8D34DB0066404B /* FirebaseAnalyticsSwift */; };
-		2F377EF72B8D34DB0066404B /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377EF62B8D34DB0066404B /* FirebaseAppCheck */; };
 		2F377EF92B8D34DB0066404B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377EF82B8D34DB0066404B /* FirebaseAuth */; };
 		2F377EFB2B8D34DB0066404B /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377EFA2B8D34DB0066404B /* FirebaseAuthCombine-Community */; };
-		2F377EFD2B8D34DB0066404B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377EFC2B8D34DB0066404B /* FirebaseCrashlytics */; };
 		2F377EFF2B8D34DB0066404B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377EFE2B8D34DB0066404B /* FirebaseDatabase */; };
 		2F377F012B8D34DB0066404B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377F002B8D34DB0066404B /* FirebaseFirestore */; };
 		2F377F032B8D34DB0066404B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377F022B8D34DB0066404B /* FirebaseFirestoreSwift */; };
 		2F377F052B8D34DB0066404B /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377F042B8D34DB0066404B /* FirebaseFunctions */; };
 		2F377F072B8D34DB0066404B /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377F062B8D34DB0066404B /* FirebaseInstallations */; };
 		2F377F092B8D34DB0066404B /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377F082B8D34DB0066404B /* FirebasePerformance */; };
-		2F377F0B2B8D34DB0066404B /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377F0A2B8D34DB0066404B /* FirebaseRemoteConfig */; };
-		2F377F0D2B8D34DB0066404B /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377F0C2B8D34DB0066404B /* FirebaseRemoteConfigSwift */; };
 		2F377F0F2B8D34DB0066404B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2F377F0E2B8D34DB0066404B /* FirebaseStorage */; };
 		2F377F122B8E98BE0066404B /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F377F112B8E98BE0066404B /* AuthenticationView.swift */; };
 		2F377F142B8E9A2F0066404B /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F377F132B8E9A2F0066404B /* SignInEmailView.swift */; };
@@ -51,6 +45,14 @@
 		2FB47B532BBB433D00F1BB2A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B522BBB433D00F1BB2A /* ListViewModel.swift */; };
 		2FB47B572BBB557700F1BB2A /* CreateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B562BBB557700F1BB2A /* CreateListView.swift */; };
 		2FB47B592BBB582700F1BB2A /* GameList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B582BBB582700F1BB2A /* GameList.swift */; };
+		2FB47B5B2BBBAFC900F1BB2A /* DetailFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B5A2BBBAFC900F1BB2A /* DetailFetchView.swift */; };
+		2FB47B5D2BBBB38600F1BB2A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B5C2BBBB38600F1BB2A /* DetailViewModel.swift */; };
+		2FB47B5F2BBE2F2700F1BB2A /* ConfirmListAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B5E2BBE2F2700F1BB2A /* ConfirmListAddView.swift */; };
+		2FB47B612BBE779100F1BB2A /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B602BBE779100F1BB2A /* ShimmerView.swift */; };
+		2FB47B632BBF517E00F1BB2A /* ListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B622BBF517E00F1BB2A /* ListObject.swift */; };
+		2FB47B652BC123E000F1BB2A /* SocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B642BC123E000F1BB2A /* SocialView.swift */; };
+		2FB47B672BC1F30600F1BB2A /* AddGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B662BC1F30600F1BB2A /* AddGamesView.swift */; };
+		2FB47B692BC1FC9A00F1BB2A /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B682BC1FC9A00F1BB2A /* ToastView.swift */; };
 		2FDA15EA2B83DC88003969EA /* GameTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15E92B83DC88003969EA /* GameTrackerApp.swift */; };
 		2FDA15EC2B83DC88003969EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15EB2B83DC88003969EA /* ContentView.swift */; };
 		2FDA15EE2B83DC89003969EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA15ED2B83DC89003969EA /* Assets.xcassets */; };
@@ -92,6 +94,14 @@
 		2FB47B522BBB433D00F1BB2A /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		2FB47B562BBB557700F1BB2A /* CreateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListView.swift; sourceTree = "<group>"; };
 		2FB47B582BBB582700F1BB2A /* GameList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameList.swift; sourceTree = "<group>"; };
+		2FB47B5A2BBBAFC900F1BB2A /* DetailFetchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFetchView.swift; sourceTree = "<group>"; };
+		2FB47B5C2BBBB38600F1BB2A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		2FB47B5E2BBE2F2700F1BB2A /* ConfirmListAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmListAddView.swift; sourceTree = "<group>"; };
+		2FB47B602BBE779100F1BB2A /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
+		2FB47B622BBF517E00F1BB2A /* ListObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListObject.swift; sourceTree = "<group>"; };
+		2FB47B642BC123E000F1BB2A /* SocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialView.swift; sourceTree = "<group>"; };
+		2FB47B662BC1F30600F1BB2A /* AddGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGamesView.swift; sourceTree = "<group>"; };
+		2FB47B682BC1FC9A00F1BB2A /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		2FDA15E62B83DC88003969EA /* GameTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDA15E92B83DC88003969EA /* GameTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTrackerApp.swift; sourceTree = "<group>"; };
 		2FDA15EB2B83DC88003969EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,19 +121,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F377F072B8D34DB0066404B /* FirebaseInstallations in Frameworks */,
-				2F377EF52B8D34DB0066404B /* FirebaseAnalyticsSwift in Frameworks */,
 				2F377F092B8D34DB0066404B /* FirebasePerformance in Frameworks */,
-				2F377F0D2B8D34DB0066404B /* FirebaseRemoteConfigSwift in Frameworks */,
-				2F377EF72B8D34DB0066404B /* FirebaseAppCheck in Frameworks */,
-				2F377EF32B8D34DB0066404B /* FirebaseAnalytics in Frameworks */,
-				2F377EFD2B8D34DB0066404B /* FirebaseCrashlytics in Frameworks */,
 				2F377EF92B8D34DB0066404B /* FirebaseAuth in Frameworks */,
 				2F377F0F2B8D34DB0066404B /* FirebaseStorage in Frameworks */,
 				2F14B9522BB49043000257CC /* Typesense in Frameworks */,
 				2F377F012B8D34DB0066404B /* FirebaseFirestore in Frameworks */,
 				2F377EFF2B8D34DB0066404B /* FirebaseDatabase in Frameworks */,
 				2F377F052B8D34DB0066404B /* FirebaseFunctions in Frameworks */,
-				2F377F0B2B8D34DB0066404B /* FirebaseRemoteConfig in Frameworks */,
 				2F377EFB2B8D34DB0066404B /* FirebaseAuthCombine-Community in Frameworks */,
 				2F377F032B8D34DB0066404B /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -194,9 +198,15 @@
 				2FDA15EB2B83DC88003969EA /* ContentView.swift */,
 				2FDA15FA2B83DCF8003969EA /* SearchView.swift */,
 				2F14B93C2BABC954000257CC /* DetailView.swift */,
+				2FB47B642BC123E000F1BB2A /* SocialView.swift */,
 				2F14B9482BACC942000257CC /* RegistrationView.swift */,
 				2FB47B502BBB42B000F1BB2A /* ListView.swift */,
+				2FB47B602BBE779100F1BB2A /* ShimmerView.swift */,
+				2FB47B5E2BBE2F2700F1BB2A /* ConfirmListAddView.swift */,
+				2FB47B682BC1FC9A00F1BB2A /* ToastView.swift */,
 				2F2AEDB92BA4C0B80048BC57 /* ForgotPasswordView.swift */,
+				2FB47B662BC1F30600F1BB2A /* AddGamesView.swift */,
+				2FB47B5A2BBBAFC900F1BB2A /* DetailFetchView.swift */,
 				2FB47B562BBB557700F1BB2A /* CreateListView.swift */,
 				2F14B94E2BB4735D000257CC /* ProgressView.swift */,
 				2FDA15FC2B83DD00003969EA /* BrowseView.swift */,
@@ -215,6 +225,7 @@
 				2F14B9422BABED1F000257CC /* GameLog.swift */,
 				2F14B9442BABEDA6000257CC /* GameReview.swift */,
 				2FB47B582BBB582700F1BB2A /* GameList.swift */,
+				2FB47B622BBF517E00F1BB2A /* ListObject.swift */,
 				2F14B9572BBA1468000257CC /* GameData.swift */,
 			);
 			path = Models;
@@ -228,6 +239,7 @@
 				2FB47B522BBB433D00F1BB2A /* ListViewModel.swift */,
 				2F14B9532BB491D9000257CC /* SearchViewModel.swift */,
 				2FDA16022B83DDE1003969EA /* Network.swift */,
+				2FB47B5C2BBBB38600F1BB2A /* DetailViewModel.swift */,
 				2F14B9552BBA0C1A000257CC /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
@@ -250,20 +262,14 @@
 			);
 			name = GameTracker;
 			packageProductDependencies = (
-				2F377EF22B8D34DB0066404B /* FirebaseAnalytics */,
-				2F377EF42B8D34DB0066404B /* FirebaseAnalyticsSwift */,
-				2F377EF62B8D34DB0066404B /* FirebaseAppCheck */,
 				2F377EF82B8D34DB0066404B /* FirebaseAuth */,
 				2F377EFA2B8D34DB0066404B /* FirebaseAuthCombine-Community */,
-				2F377EFC2B8D34DB0066404B /* FirebaseCrashlytics */,
 				2F377EFE2B8D34DB0066404B /* FirebaseDatabase */,
 				2F377F002B8D34DB0066404B /* FirebaseFirestore */,
 				2F377F022B8D34DB0066404B /* FirebaseFirestoreSwift */,
 				2F377F042B8D34DB0066404B /* FirebaseFunctions */,
 				2F377F062B8D34DB0066404B /* FirebaseInstallations */,
 				2F377F082B8D34DB0066404B /* FirebasePerformance */,
-				2F377F0A2B8D34DB0066404B /* FirebaseRemoteConfig */,
-				2F377F0C2B8D34DB0066404B /* FirebaseRemoteConfigSwift */,
 				2F377F0E2B8D34DB0066404B /* FirebaseStorage */,
 				2F14B9512BB49043000257CC /* Typesense */,
 			);
@@ -330,6 +336,7 @@
 				2F14B9392BA8ECE5000257CC /* UserEnvironment.swift in Sources */,
 				2F14B9372BA4E58B000257CC /* AuthViewModel.swift in Sources */,
 				2FDA15FD2B83DD00003969EA /* BrowseView.swift in Sources */,
+				2FB47B5B2BBBAFC900F1BB2A /* DetailFetchView.swift in Sources */,
 				2FDA16012B83DD0F003969EA /* Game.swift in Sources */,
 				2F14B93B2BA94FF4000257CC /* BrowseViewModel.swift in Sources */,
 				2F14B9582BBA1468000257CC /* GameData.swift in Sources */,
@@ -340,6 +347,7 @@
 				2F377F162B8E9C460066404B /* AuthenticationManager.swift in Sources */,
 				2F14B9452BABEDA6000257CC /* GameReview.swift in Sources */,
 				2F85773D2B9F8F950000E66B /* UserManager.swift in Sources */,
+				2FB47B612BBE779100F1BB2A /* ShimmerView.swift in Sources */,
 				2FDA15EC2B83DC88003969EA /* ContentView.swift in Sources */,
 				2FDA15FF2B83DD09003969EA /* ProfileView.swift in Sources */,
 				2F8577412BA0B5EC0000E66B /* User.swift in Sources */,
@@ -350,16 +358,22 @@
 				2F14B9542BB491D9000257CC /* SearchViewModel.swift in Sources */,
 				2FDA15FB2B83DCF8003969EA /* SearchView.swift in Sources */,
 				2F377F182B8E9FDF0066404B /* RootView.swift in Sources */,
+				2FB47B5D2BBBB38600F1BB2A /* DetailViewModel.swift in Sources */,
 				2FDA16032B83DDE1003969EA /* Network.swift in Sources */,
+				2FB47B692BC1FC9A00F1BB2A /* ToastView.swift in Sources */,
 				2FDA15EA2B83DC88003969EA /* GameTrackerApp.swift in Sources */,
 				2F377F142B8E9A2F0066404B /* SignInEmailView.swift in Sources */,
+				2FB47B672BC1F30600F1BB2A /* AddGamesView.swift in Sources */,
 				2FB47B572BBB557700F1BB2A /* CreateListView.swift in Sources */,
 				2F14B9562BBA0C1A000257CC /* ProfileViewModel.swift in Sources */,
+				2FB47B5F2BBE2F2700F1BB2A /* ConfirmListAddView.swift in Sources */,
 				2F8577432BA0BF1B0000E66B /* SignUpEmailView.swift in Sources */,
 				2F14B9432BABED1F000257CC /* GameLog.swift in Sources */,
 				2F14B94F2BB4735D000257CC /* ProgressView.swift in Sources */,
 				2F377F1A2B8EA94A0066404B /* SettingsView.swift in Sources */,
 				2F85773B2B9F73740000E66B /* SettingsViewModel.swift in Sources */,
+				2FB47B652BC123E000F1BB2A /* SocialView.swift in Sources */,
+				2FB47B632BBF517E00F1BB2A /* ListObject.swift in Sources */,
 				2FB47B532BBB433D00F1BB2A /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,21 +606,6 @@
 			package = 2F14B9502BB49043000257CC /* XCRemoteSwiftPackageReference "typesense-swift" */;
 			productName = Typesense;
 		};
-		2F377EF22B8D34DB0066404B /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F377EF12B8D34DB0066404B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		2F377EF42B8D34DB0066404B /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F377EF12B8D34DB0066404B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
-		2F377EF62B8D34DB0066404B /* FirebaseAppCheck */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F377EF12B8D34DB0066404B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAppCheck;
-		};
 		2F377EF82B8D34DB0066404B /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2F377EF12B8D34DB0066404B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -616,11 +615,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F377EF12B8D34DB0066404B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseAuthCombine-Community";
-		};
-		2F377EFC2B8D34DB0066404B /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F377EF12B8D34DB0066404B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
 		};
 		2F377EFE2B8D34DB0066404B /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -651,16 +645,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F377EF12B8D34DB0066404B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
-		};
-		2F377F0A2B8D34DB0066404B /* FirebaseRemoteConfig */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F377EF12B8D34DB0066404B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfig;
-		};
-		2F377F0C2B8D34DB0066404B /* FirebaseRemoteConfigSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F377EF12B8D34DB0066404B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfigSwift;
 		};
 		2F377F0E2B8D34DB0066404B /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;

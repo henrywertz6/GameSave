@@ -14,8 +14,8 @@
             filePath = "GameTracker/Views/DetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "GameTracker/Views/RootView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "GameTracker/Views/RootView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -109,8 +109,8 @@
             filePath = "GameTracker/Views/RootView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -125,8 +125,8 @@
             filePath = "GameTracker/Views/BrowseView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -164,24 +164,94 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5E707074-FCB7-4AF8-9335-FAB9A2AD04D4"
+            uuid = "DABF7F0F-4D7C-48EC-826A-BB24BB42E072"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            symbolName = "CGPostError"
-            moduleName = "">
+            filePath = "GameTracker/Views/DetailFetchView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "5E707074-FCB7-4AF8-9335-FAB9A2AD04D4 - 6b2a6ff60c6dfa83"
+                  uuid = "DABF7F0F-4D7C-48EC-826A-BB24BB42E072 - 739ad2cd5b9d8a56"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CGPostError"
-                  moduleName = "CoreGraphics"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #2 () -&gt; () in GameTracker.DetailFetchView.body.getter : some"
+                  moduleName = "GameTracker"
                   usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
+                  urlString = "file:///Users/henrywertz/Documents/COS-IW/GameTracker/GameTracker/Views/DetailFetchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "DABF7F0F-4D7C-48EC-826A-BB24BB42E072 - e63649503b5588bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #2 () -&gt; () in GameTracker.DetailFetchView.body.getter : some"
+                  moduleName = "GameTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/henrywertz/Documents/COS-IW/GameTracker/GameTracker/Views/DetailFetchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "DABF7F0F-4D7C-48EC-826A-BB24BB42E072 - acbce0c02df4ce54"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #2 () -&gt; () in GameTracker.DetailFetchView.body.getter : some"
+                  moduleName = "GameTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/henrywertz/Documents/COS-IW/GameTracker/GameTracker/Views/DetailFetchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "DABF7F0F-4D7C-48EC-826A-BB24BB42E072 - 4bdbafc6cd3ed059"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #2 () -&gt; () in GameTracker.DetailFetchView.body.getter : some"
+                  moduleName = "GameTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/henrywertz/Documents/COS-IW/GameTracker/GameTracker/Views/DetailFetchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "DABF7F0F-4D7C-48EC-826A-BB24BB42E072 - 256944c71821b658"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in closure #2 () -&gt; () in GameTracker.DetailFetchView.body.getter : some"
+                  moduleName = "GameTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/henrywertz/Documents/COS-IW/GameTracker/GameTracker/Views/DetailFetchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "120">
                </Location>
             </Locations>
          </BreakpointContent>

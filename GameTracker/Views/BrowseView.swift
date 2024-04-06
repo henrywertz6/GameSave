@@ -20,8 +20,19 @@ struct BrowseView: View {
                                 image.resizable()
                                     .scaledToFill()
                                     .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    .transition(.opacity.animation(.easeInOut(duration: 0.7)))
                             } placeholder: {
-                                
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color.gray.opacity(0.2))
+                                    .frame(width: 100, height: 150)
+                                    .overlay(
+                                        Text(game.name)
+                                            .font(.caption)
+                                            .foregroundColor(.black)
+                                            .lineLimit(2)
+                                            .multilineTextAlignment(.center)
+                                            .padding(4)
+                                    )
                             }
                             .frame(width: 100, height: 150)
                         }

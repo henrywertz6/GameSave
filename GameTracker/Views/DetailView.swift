@@ -9,8 +9,9 @@ import SwiftUI
 
 struct DetailView: View {
     @EnvironmentObject var userEnvironment: UserEnvironment
-    let game: Game
+    @State var game: Game
     @State var rating: Double = 0
+    @State var reviewText: String = ""
     
     var label = ""
     
@@ -25,8 +26,17 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
+            AsyncImage(url: URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/\(game.image_id).jpg")) { image in
+                image.resizable()
+                    .scaledToFill()
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+            } placeholder: {
+                
+            }
+            .frame(width: 100, height: 150)
             Text(game.name)
             Text(String(game.rating!))
+                .bold()
             let gameId = String(game.id)
             let isInLibrary = userEnvironment.library.contains(gameId)
             let isReviewed = userEnvironment.reviews.contains(gameId)
@@ -67,12 +77,17 @@ struct DetailView: View {
                 .font(.system(size: 40))
                 .foregroundStyle(active ? .yellow : .gray.opacity(0.3))
             }
-            
+            TextEditor(text: $reviewText)
+                            .frame(height: 150)
+                            .border(Color.gray, width: 1)
+                            .cornerRadius(5)
+                            .padding(.horizontal)
+                            .disabled(isReviewed)
             Button {
                 Task {
                     guard let user = userEnvironment.user else {return}
                     if !isReviewed {
-                        try await UserManager.shared.addReview(userId: user.uid, game: game, rating: rating, reviewText: "")
+                        try await UserManager.shared.addReview(userId: user.uid, gameId: String(game.id), rating: rating, reviewText: "")
                         userEnvironment.reviews.insert(gameId)
                     }
                     else {
@@ -99,7 +114,7 @@ struct DetailView: View {
         .onAppear {
             Task {
                 guard let user = userEnvironment.user else {return}
-                rating = try await UserManager.shared.getGameRating(userId: user.uid, game: game)
+                rating = try await UserManager.shared.getGameRating(userId: user.uid, gameId: String(game.id))
             }
         }
         .padding()
@@ -108,6 +123,6 @@ struct DetailView: View {
 
 #Preview {
     NavigationStack {
-        DetailView(game: Game(id: 23, name: "Bingus",  total_rating: 234, total_rating_count: 34, rating: 76.234, image_id: "asdfaasd")).environmentObject(UserEnvironment())
+        DetailView(game: Game(id: 1, name: "Street Fighter 6",  total_rating: 234, total_rating_count: 34, rating: 96.234, image_id: "co5vst")).environmentObject(UserEnvironment())
     }
 }

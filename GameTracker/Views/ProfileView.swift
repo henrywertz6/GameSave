@@ -34,10 +34,12 @@ struct ProfileView: View {
                                 image.resizable()
                                     .scaledToFill()
                                     .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    .transition(.opacity.animation(.easeInOut(duration: 0.7)))
                             } placeholder: {
                                 
                             }
                             .frame(width: 100, height: 150)
+                            
                         }
                     }
                 }

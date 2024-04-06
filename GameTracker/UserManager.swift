@@ -84,29 +84,29 @@ final class UserManager {
         print("Game with id \(game.id) removed from library")
     }
     
-    func addReview(userId: String, game: Game, rating: Double, reviewText: String?) async throws {
+    func addReview(userId: String, gameId: String, rating: Double, reviewText: String?) async throws {
         let reviewLibraryCollection = db.collection("users").document(userId).collection("reviewLibrary")
         
         let gameReview = GameReview(
             id: UUID(),
-            gameId: game.id,
+            gameId: Int(gameId) ?? 0,
             rating: rating,
             reviewText: reviewText,
             createdAt: Date()
         )
         do {
             try reviewLibraryCollection.document().setData(from: gameReview)
-            print("Game with id \(game.id) has been reviewed. ReviewId: \(gameReview.id)")
+            print("Game with id \(gameId) has been reviewed. ReviewId: \(gameReview.id)")
         }
         catch {
             print(error)
         }
     }
     
-    func getGameRating(userId: String, game: Game) async throws -> Double {
+    func getGameRating(userId: String, gameId: String) async throws -> Double {
         let reviewLibraryCollection = db.collection("users").document(userId).collection("reviewLibrary")
         
-        let reviewQuery = reviewLibraryCollection.whereField("gameId", isEqualTo: game.id)
+        let reviewQuery = reviewLibraryCollection.whereField("gameId", isEqualTo: gameId)
         
         let querySnapshot = try await reviewQuery.getDocuments()
         
@@ -150,15 +150,21 @@ final class UserManager {
         
     }
     
-    func createList(userId: String, initialGames: [Game], title: String, isPublic: Bool) async throws {
+    func createList(userId: String, initialGames: [String], title: String, isPublic: Bool) async throws {
         let listRef = db.collection("lists")
-        var gameIdList: [Int] = []
-        for game in initialGames {
-            gameIdList.append(game.id)
+        var gameIdList: [String] = []
+        for gameId in initialGames {
+            gameIdList.append(gameId)
         }
         let listObject = GameList(id: UUID(), title: title, userId: userId, games: gameIdList, isPublic: isPublic)
         
         try listRef.addDocument(from: listObject)
+        
+    }
+    
+    func fetchGame(gameId: String) async throws -> Game {
+        return try await db.collection("games").document(gameId).getDocument(as: Game.self)
+        
         
     }
 

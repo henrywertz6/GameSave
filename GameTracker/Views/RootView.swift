@@ -15,13 +15,15 @@ struct RootView: View {
         TabView {
             NavigationStack {
                 BrowseView()
-                    
+                
             }
             .tabItem { Label("Browse", systemImage: "arcade.stick.console") }
             SearchView()
                 .tabItem { Label("Search", systemImage: "magnifyingglass")}
-            CreateListView()
-                .tabItem { Label("Lists", systemImage: "list.bullet")}
+            ListView()
+            .tabItem { Label("Lists", systemImage: "list.bullet")}
+            SocialView()
+                .tabItem{ Label("Social", systemImage: "bolt")}
             NavigationStack {
                 ProfileView(showSignInView: $showSignInView)
                     .toolbar {
@@ -35,7 +37,7 @@ struct RootView: View {
                             
                         }
                     }
-                    
+                
             }
             .tabItem { Label("Profile", systemImage: "person") }
         }
