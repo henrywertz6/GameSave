@@ -123,6 +123,6 @@ struct DetailView: View {
 
 #Preview {
     NavigationStack {
-        DetailView(game: Game(id: 1, name: "Street Fighter 6",  total_rating: 234, total_rating_count: 34, rating: 96.234, image_id: "co5vst")).environmentObject(UserEnvironment())
+        DetailView(game: Game(id: 1, name: "Street Fighter 6",  total_rating: 234, total_rating_count: 34, rating: 96.234, image_id: "co5vst", first_release_date: 23423423)).environmentObject(UserEnvironment())
     }
 }

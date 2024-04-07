@@ -189,11 +189,11 @@ final class UserManager {
         
     }
 
-    func fetchGamePreview(gameId: String) async throws -> GamePreview {
+    func fetchGamePreview(gameId: String) async throws -> Game {
         let gameRef = db.collection("games").document(gameId)
         
         do {
-            let gamePreview = try await gameRef.getDocument(as: GamePreview.self)
+            let gamePreview = try await gameRef.getDocument(as: Game.self)
             return gamePreview
             
             

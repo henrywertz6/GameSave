@@ -14,6 +14,7 @@ struct Game: Codable, Identifiable {
     let total_rating_count: Int?
     let rating: Double?
     let image_id: String
+    let first_release_date: Double?
 
 }
 

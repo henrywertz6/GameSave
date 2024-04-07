@@ -23,7 +23,7 @@ import FirebaseFirestore
 class ListViewModel: ObservableObject {
     @Published var currentList: GameList? = nil
     @Published var userLists: [GameList] = []
-    @Published var gamePreviews: [GamePreview] = []
+    @Published var games: [Game] = []
     @Published var isLoading: Bool = false
     
     
@@ -42,11 +42,11 @@ class ListViewModel: ObservableObject {
     func fetchGamePreviews(userId: String, list: GameList) async throws {
         isLoading = true
         for game in list.games {
-            gamePreviews.append(try await fetchGamePreview(for: game))
+            games.append(try await fetchGamePreview(for: game))
         }
     }
     
-    func fetchGamePreview(for gameId: String) async throws -> GamePreview {
+    func fetchGamePreview(for gameId: String) async throws -> Game {
         return try await UserManager.shared.fetchGamePreview(gameId: gameId)
     }
     
