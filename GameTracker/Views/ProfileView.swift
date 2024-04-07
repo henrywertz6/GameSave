@@ -15,7 +15,7 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationStack {
-            Image("placeholder")
+            Image("chub")
                 .resizable()
                 .frame(width: 180, height: 180)
                 .clipShape(Circle())
@@ -34,7 +34,7 @@ struct ProfileView: View {
                                 image.resizable()
                                     .scaledToFill()
                                     .clipShape(RoundedRectangle(cornerRadius: 8))
-                                    .transition(.opacity.animation(.easeInOut(duration: 0.7)))
+                                    .transition(.opacity.animation(.easeInOut(duration: 0.5)))
                             } placeholder: {
                                 
                             }

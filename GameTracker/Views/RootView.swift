@@ -20,7 +20,7 @@ struct RootView: View {
             .tabItem { Label("Browse", systemImage: "arcade.stick.console") }
             SearchView()
                 .tabItem { Label("Search", systemImage: "magnifyingglass")}
-            ListView()
+            MyListsView()
             .tabItem { Label("Lists", systemImage: "list.bullet")}
             SocialView()
                 .tabItem{ Label("Social", systemImage: "bolt")}

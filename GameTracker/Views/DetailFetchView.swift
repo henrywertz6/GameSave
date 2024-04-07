@@ -16,9 +16,33 @@ struct DetailFetchView: View {
     var body: some View {
         VStack {
             if viewModel.isLoading {
-                Text("yo wtf")
+                Text("Loading...")
             }
             else {
+                AsyncImage(url: URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/\(viewModel.game?.image_id ?? "bingus").jpg")) { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 141, height: 212)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .transition(.opacity.animation(.easeInOut(duration: 0.7)))
+                } placeholder: {
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.gray.opacity(0.2))
+                        .frame(width: 141, height: 212)
+                        .overlay(
+                            Text(viewModel.game!.name)
+                                .font(.caption)
+                                .foregroundColor(.white)
+                                .lineLimit(2)
+                                .multilineTextAlignment(.center)
+                                .padding(4)
+                        )
+                }
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                )
+                .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
                 Text(viewModel.game!.name)
                 Text(String((viewModel.game?.rating ?? 0)))
                 let isInLibrary = userEnvironment.library.contains(gameId)

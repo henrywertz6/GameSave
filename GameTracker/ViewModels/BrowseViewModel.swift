@@ -19,6 +19,7 @@ class BrowseViewModel: ObservableObject {
         // Construct the initial query with order, limit, and pagination cursor (empty for first page)
         let query = db.collection("games")
             .whereField("category", isEqualTo: 0)
+            .whereField("total_rating_count", isGreaterThan: 35)
             .order(by: "rating", descending: true)
             .limit(to: 25)
         

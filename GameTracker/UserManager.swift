@@ -167,7 +167,42 @@ final class UserManager {
         
         
     }
-
     
+    func fetchUserLists(userId: String) async throws -> [GameList] {
+        let listRef = db.collection("lists")
+        let userListsRef = try await listRef.whereField("userId", isEqualTo: userId).getDocuments()
+        
+        var gameLists: [GameList] = []
+        
+        for document in userListsRef.documents {
+            do {
+                let decoder = Firestore.Decoder()
+                let data = document.data()
+                let decodedData = try decoder.decode(GameList.self, from: data)
+                gameLists.append(decodedData)
+            } catch {
+                print("Error decoding GameList: \(error)")
+            }
+        }
+        
+        return gameLists
+        
+    }
+
+    func fetchGamePreview(gameId: String) async throws -> GamePreview {
+        let gameRef = db.collection("games").document(gameId)
+        
+        do {
+            let gamePreview = try await gameRef.getDocument(as: GamePreview.self)
+            return gamePreview
+            
+            
+        }
+        catch {
+            print("Error loading GamePreview: \(error)")
+            throw error
+        }
+        
+    }
     
 }
