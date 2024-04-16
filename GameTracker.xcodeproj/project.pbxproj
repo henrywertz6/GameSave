@@ -37,10 +37,13 @@
 		2F377F162B8E9C460066404B /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F377F152B8E9C460066404B /* AuthenticationManager.swift */; };
 		2F377F182B8E9FDF0066404B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F377F172B8E9FDF0066404B /* RootView.swift */; };
 		2F377F1A2B8EA94A0066404B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F377F192B8EA94A0066404B /* SettingsView.swift */; };
+		2F83C5452BCB25AC00F40C83 /* SocialSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F83C5442BCB25AC00F40C83 /* SocialSearchView.swift */; };
+		2F83C5472BCB2ECD00F40C83 /* ActivityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F83C5462BCB2ECD00F40C83 /* ActivityLog.swift */; };
 		2F85773B2B9F73740000E66B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F85773A2B9F73740000E66B /* SettingsViewModel.swift */; };
 		2F85773D2B9F8F950000E66B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F85773C2B9F8F950000E66B /* UserManager.swift */; };
 		2F8577412BA0B5EC0000E66B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8577402BA0B5EC0000E66B /* User.swift */; };
 		2F8577432BA0BF1B0000E66B /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8577422BA0BF1B0000E66B /* SignUpEmailView.swift */; };
+		2F9BE9F42BC61FBC000B61D2 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9BE9F32BC61FBC000B61D2 /* UserProfileView.swift */; };
 		2FB47B512BBB42B000F1BB2A /* MyListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B502BBB42B000F1BB2A /* MyListsView.swift */; };
 		2FB47B532BBB433D00F1BB2A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B522BBB433D00F1BB2A /* ListViewModel.swift */; };
 		2FB47B572BBB557700F1BB2A /* CreateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B562BBB557700F1BB2A /* CreateListView.swift */; };
@@ -55,13 +58,15 @@
 		2FB47B692BC1FC9A00F1BB2A /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B682BC1FC9A00F1BB2A /* ToastView.swift */; };
 		2FB47B6B2BC213F700F1BB2A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B6A2BC213F700F1BB2A /* ListView.swift */; };
 		2FB47B6D2BC310BA00F1BB2A /* GamePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B6C2BC310BA00F1BB2A /* GamePreview.swift */; };
+		2FB47B6F2BC49A9900F1BB2A /* SocialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B6E2BC49A9900F1BB2A /* SocialViewModel.swift */; };
+		2FB47B712BC4B41400F1BB2A /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B702BC4B41400F1BB2A /* UserSearch.swift */; };
 		2FDA15EA2B83DC88003969EA /* GameTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15E92B83DC88003969EA /* GameTrackerApp.swift */; };
 		2FDA15EC2B83DC88003969EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15EB2B83DC88003969EA /* ContentView.swift */; };
 		2FDA15EE2B83DC89003969EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA15ED2B83DC89003969EA /* Assets.xcassets */; };
 		2FDA15F12B83DC89003969EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA15F02B83DC89003969EA /* Preview Assets.xcassets */; };
 		2FDA15FB2B83DCF8003969EA /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15FA2B83DCF8003969EA /* SearchView.swift */; };
 		2FDA15FD2B83DD00003969EA /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15FC2B83DD00003969EA /* BrowseView.swift */; };
-		2FDA15FF2B83DD09003969EA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15FE2B83DD09003969EA /* ProfileView.swift */; };
+		2FDA15FF2B83DD09003969EA /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15FE2B83DD09003969EA /* MyProfileView.swift */; };
 		2FDA16012B83DD0F003969EA /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA16002B83DD0F003969EA /* Game.swift */; };
 		2FDA16032B83DDE1003969EA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA16022B83DDE1003969EA /* Network.swift */; };
 		2FEB68072B8D253A00FA541E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB68062B8D253A00FA541E /* CustomTabBar.swift */; };
@@ -88,10 +93,13 @@
 		2F377F152B8E9C460066404B /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		2F377F172B8E9FDF0066404B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		2F377F192B8EA94A0066404B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2F83C5442BCB25AC00F40C83 /* SocialSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSearchView.swift; sourceTree = "<group>"; };
+		2F83C5462BCB2ECD00F40C83 /* ActivityLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLog.swift; sourceTree = "<group>"; };
 		2F85773A2B9F73740000E66B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		2F85773C2B9F8F950000E66B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2F8577402BA0B5EC0000E66B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2F8577422BA0BF1B0000E66B /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
+		2F9BE9F32BC61FBC000B61D2 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		2FB47B502BBB42B000F1BB2A /* MyListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListsView.swift; sourceTree = "<group>"; };
 		2FB47B522BBB433D00F1BB2A /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		2FB47B562BBB557700F1BB2A /* CreateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListView.swift; sourceTree = "<group>"; };
@@ -106,6 +114,8 @@
 		2FB47B682BC1FC9A00F1BB2A /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		2FB47B6A2BC213F700F1BB2A /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		2FB47B6C2BC310BA00F1BB2A /* GamePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePreview.swift; sourceTree = "<group>"; };
+		2FB47B6E2BC49A9900F1BB2A /* SocialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewModel.swift; sourceTree = "<group>"; };
+		2FB47B702BC4B41400F1BB2A /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
 		2FDA15E62B83DC88003969EA /* GameTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDA15E92B83DC88003969EA /* GameTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTrackerApp.swift; sourceTree = "<group>"; };
 		2FDA15EB2B83DC88003969EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,7 +123,7 @@
 		2FDA15F02B83DC89003969EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2FDA15FA2B83DCF8003969EA /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		2FDA15FC2B83DD00003969EA /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
-		2FDA15FE2B83DD09003969EA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2FDA15FE2B83DD09003969EA /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		2FDA16002B83DD0F003969EA /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		2FDA16022B83DDE1003969EA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		2FEB68062B8D253A00FA541E /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -202,12 +212,14 @@
 				2FDA15EB2B83DC88003969EA /* ContentView.swift */,
 				2FDA15FA2B83DCF8003969EA /* SearchView.swift */,
 				2F14B93C2BABC954000257CC /* DetailView.swift */,
-				2FB47B642BC123E000F1BB2A /* SocialView.swift */,
+				2F83C5442BCB25AC00F40C83 /* SocialSearchView.swift */,
+				2F9BE9F32BC61FBC000B61D2 /* UserProfileView.swift */,
 				2F14B9482BACC942000257CC /* RegistrationView.swift */,
 				2FB47B502BBB42B000F1BB2A /* MyListsView.swift */,
 				2FB47B602BBE779100F1BB2A /* ShimmerView.swift */,
 				2FB47B5E2BBE2F2700F1BB2A /* ConfirmListAddView.swift */,
 				2FB47B682BC1FC9A00F1BB2A /* ToastView.swift */,
+				2FB47B642BC123E000F1BB2A /* SocialView.swift */,
 				2FB47B6A2BC213F700F1BB2A /* ListView.swift */,
 				2F2AEDB92BA4C0B80048BC57 /* ForgotPasswordView.swift */,
 				2FB47B662BC1F30600F1BB2A /* AddGamesView.swift */,
@@ -217,7 +229,7 @@
 				2FDA15FC2B83DD00003969EA /* BrowseView.swift */,
 				2F377F172B8E9FDF0066404B /* RootView.swift */,
 				2F377F192B8EA94A0066404B /* SettingsView.swift */,
-				2FDA15FE2B83DD09003969EA /* ProfileView.swift */,
+				2FDA15FE2B83DD09003969EA /* MyProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,8 +239,10 @@
 			children = (
 				2FDA16002B83DD0F003969EA /* Game.swift */,
 				2F8577402BA0B5EC0000E66B /* User.swift */,
+				2FB47B702BC4B41400F1BB2A /* UserSearch.swift */,
 				2F14B9422BABED1F000257CC /* GameLog.swift */,
 				2F14B9442BABEDA6000257CC /* GameReview.swift */,
+				2F83C5462BCB2ECD00F40C83 /* ActivityLog.swift */,
 				2FB47B582BBB582700F1BB2A /* GameList.swift */,
 				2FB47B622BBF517E00F1BB2A /* ListObject.swift */,
 				2F14B9572BBA1468000257CC /* GameData.swift */,
@@ -244,6 +258,7 @@
 				2F14B93A2BA94FF4000257CC /* BrowseViewModel.swift */,
 				2FB47B522BBB433D00F1BB2A /* ListViewModel.swift */,
 				2F14B9532BB491D9000257CC /* SearchViewModel.swift */,
+				2FB47B6E2BC49A9900F1BB2A /* SocialViewModel.swift */,
 				2FDA16022B83DDE1003969EA /* Network.swift */,
 				2FB47B5C2BBBB38600F1BB2A /* DetailViewModel.swift */,
 				2F14B9552BBA0C1A000257CC /* ProfileViewModel.swift */,
@@ -351,13 +366,15 @@
 				2FB47B592BBB582700F1BB2A /* GameList.swift in Sources */,
 				2F14B94D2BB27AF7000257CC /* SizeModifier.swift in Sources */,
 				2F14B94B2BB279E4000257CC /* StarRatingSlider.swift in Sources */,
+				2FB47B712BC4B41400F1BB2A /* UserSearch.swift in Sources */,
 				2F14B93D2BABC954000257CC /* DetailView.swift in Sources */,
+				2F83C5452BCB25AC00F40C83 /* SocialSearchView.swift in Sources */,
 				2F377F162B8E9C460066404B /* AuthenticationManager.swift in Sources */,
 				2F14B9452BABEDA6000257CC /* GameReview.swift in Sources */,
 				2F85773D2B9F8F950000E66B /* UserManager.swift in Sources */,
 				2FB47B612BBE779100F1BB2A /* ShimmerView.swift in Sources */,
 				2FDA15EC2B83DC88003969EA /* ContentView.swift in Sources */,
-				2FDA15FF2B83DD09003969EA /* ProfileView.swift in Sources */,
+				2FDA15FF2B83DD09003969EA /* MyProfileView.swift in Sources */,
 				2F8577412BA0B5EC0000E66B /* User.swift in Sources */,
 				2FEB68072B8D253A00FA541E /* CustomTabBar.swift in Sources */,
 				2F377F122B8E98BE0066404B /* AuthenticationView.swift in Sources */,
@@ -373,12 +390,15 @@
 				2F377F142B8E9A2F0066404B /* SignInEmailView.swift in Sources */,
 				2FB47B672BC1F30600F1BB2A /* AddGamesView.swift in Sources */,
 				2FB47B572BBB557700F1BB2A /* CreateListView.swift in Sources */,
+				2FB47B6F2BC49A9900F1BB2A /* SocialViewModel.swift in Sources */,
 				2F14B9562BBA0C1A000257CC /* ProfileViewModel.swift in Sources */,
 				2FB47B5F2BBE2F2700F1BB2A /* ConfirmListAddView.swift in Sources */,
 				2F8577432BA0BF1B0000E66B /* SignUpEmailView.swift in Sources */,
 				2F14B9432BABED1F000257CC /* GameLog.swift in Sources */,
 				2F14B94F2BB4735D000257CC /* ProgressView.swift in Sources */,
 				2F377F1A2B8EA94A0066404B /* SettingsView.swift in Sources */,
+				2F9BE9F42BC61FBC000B61D2 /* UserProfileView.swift in Sources */,
+				2F83C5472BCB2ECD00F40C83 /* ActivityLog.swift in Sources */,
 				2F85773B2B9F73740000E66B /* SettingsViewModel.swift in Sources */,
 				2FB47B652BC123E000F1BB2A /* SocialView.swift in Sources */,
 				2FB47B632BBF517E00F1BB2A /* ListObject.swift in Sources */,
@@ -513,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GameTracker/Preview Content\"";
@@ -542,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GameTracker/Preview Content\"";

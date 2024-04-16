@@ -9,9 +9,8 @@ import SwiftUI
 
 struct DetailView: View {
     @EnvironmentObject var userEnvironment: UserEnvironment
+    @StateObject var viewModel = DetailViewModel()
     @State var game: Game
-    @State var rating: Double = 0
-    @State var reviewText: String = ""
     
     var label = ""
     
@@ -66,28 +65,34 @@ struct DetailView: View {
                 
             }
             StarRatingSlider(
-                count: $rating,
+                count: $viewModel.rating,
                 minimum: 1,
                 maximum: 5,
                 spacing: 8
             ) { active, i in
                 let index = Double(i)
-                let isFilled = index < rating
-                Image(systemName: isFilled ? ((rating - index).isEqual(to: 0.5) ? "star.leadinghalf.fill" : "star.fill") : "star")
+                let isFilled = index < viewModel.rating
+                Image(systemName: isFilled ? ((viewModel.rating - index).isEqual(to: 0.5) ? "star.leadinghalf.fill" : "star.fill") : "star")
                 .font(.system(size: 40))
                 .foregroundStyle(active ? .yellow : .gray.opacity(0.3))
             }
-            TextEditor(text: $reviewText)
-                            .frame(height: 150)
-                            .border(Color.gray, width: 1)
-                            .cornerRadius(5)
-                            .padding(.horizontal)
-                            .disabled(isReviewed)
+            .disabled(isReviewed)
+            if isReviewed {
+                Text(viewModel.reviewText)
+            } else {
+                TextEditor(text: $viewModel.reviewText)
+                                .frame(height: 150)
+                                .border(Color.gray, width: 1)
+                                .cornerRadius(5)
+                                .padding(.horizontal)
+                                .disabled(isReviewed)
+            }
+            
             Button {
                 Task {
                     guard let user = userEnvironment.user else {return}
                     if !isReviewed {
-                        try await UserManager.shared.addReview(userId: user.uid, gameId: String(game.id), rating: rating, reviewText: "")
+                        try await UserManager.shared.addReview(userId: user.uid, gameId: String(game.id), rating: viewModel.rating, reviewText: viewModel.reviewText, gameName: game.name)
                         userEnvironment.reviews.insert(gameId)
                     }
                     else {
@@ -114,7 +119,7 @@ struct DetailView: View {
         .onAppear {
             Task {
                 guard let user = userEnvironment.user else {return}
-                rating = try await UserManager.shared.getGameRating(userId: user.uid, gameId: String(game.id))
+                try await viewModel.getGameRating(userId: user.uid, gameId: game.id)
             }
         }
         .padding()

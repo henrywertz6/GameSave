@@ -12,8 +12,8 @@ struct User: Codable {
     var display_name: String
     var profilePic: String?
     var preferredPlatforms: [String]
-    var friends: [String]?
-    var following: [String]?
+    var followers: [String]
+    var following: [String]
     var datecreated: Date
     var email: String
 }

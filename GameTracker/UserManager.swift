@@ -20,14 +20,17 @@ final class UserManager {
             display_name: auth.display_name!,
             profilePic: auth.photoUrl,
             preferredPlatforms: [],
-            friends: nil,
-            following: nil,
+            followers: [],
+            following: [],
             datecreated: Date(),
             email: auth.email!
             
         )
         
+        let searchUser = UserSearch(id: auth.uid, display_name: auth.display_name!)
+        
         try db.collection("users").document(auth.uid).setData(from: user)
+        try db.collection("usersearch").document(auth.uid).setData(from: searchUser)
     }
     
     func getUserLibraryId(userId: String) async throws -> Set<String> {
@@ -42,20 +45,20 @@ final class UserManager {
     }
     
     func getUserReviewSet(userId: String) async throws -> Set<String> {
-      let reviewLibrary = try await db.collection("users").document(userId).collection("reviewLibrary").getDocuments()
-      var reviews: Set<String> = []
-      for gameReview in reviewLibrary.documents {
-        let gameId = gameReview.get("gameId") as? Int  // Access gameId as optional Int
-
-        if let gameId = gameId {
-          reviews.insert(String(gameId)) // Convert Int to String for Set
-        } else {
-          reviews.insert("Missing Game ID") // Handle missing gameId
+        let reviewLibrary = try await db.collection("users").document(userId).collection("reviewLibrary").getDocuments()
+        var reviews: Set<String> = []
+        for gameReview in reviewLibrary.documents {
+            let gameId = gameReview.get("gameId") as? Int  // Access gameId as optional Int
+            
+            if let gameId = gameId {
+                reviews.insert(String(gameId)) // Convert Int to String for Set
+            } else {
+                reviews.insert("Missing Game ID") // Handle missing gameId
+            }
         }
-      }
-      return reviews
+        return reviews
     }
-
+    
     
     func addGameToLibrary(userId: String, game: Game) async throws {
         let gameLibraryCollection = db.collection("users").document(userId).collection("gameLibrary")
@@ -70,6 +73,8 @@ final class UserManager {
         
         do {
             try gameLibraryCollection.document(String(game.id)).setData(from: gameLog)
+            let activityLog = ActivityLog(id: UUID(), userId: userId, activityType: "Game", timestamp: Date(), listId: nil, listName: nil, gameId: String(game.id), gameName: game.name, reviewId: nil, rating: nil)
+            try await UserManager.shared.addActivityLog(activityLog: activityLog)
             print("Game with id \(game.id) added to library")
         }
         catch {
@@ -84,11 +89,11 @@ final class UserManager {
         print("Game with id \(game.id) removed from library")
     }
     
-    func addReview(userId: String, gameId: String, rating: Double, reviewText: String?) async throws {
+    func addReview(userId: String, gameId: String, rating: Double, reviewText: String?, gameName: String) async throws {
         let reviewLibraryCollection = db.collection("users").document(userId).collection("reviewLibrary")
-        
+        let reviewId = UUID()
         let gameReview = GameReview(
-            id: UUID(),
+            id: reviewId,
             gameId: Int(gameId) ?? 0,
             rating: rating,
             reviewText: reviewText,
@@ -96,6 +101,8 @@ final class UserManager {
         )
         do {
             try reviewLibraryCollection.document().setData(from: gameReview)
+            let activityLog = ActivityLog(id: UUID(), userId: userId, activityType: "Review", timestamp: Date(), listId: nil, listName: nil,  gameId: gameId, gameName: gameName, reviewId: reviewId, rating: rating)
+            try await UserManager.shared.addActivityLog(activityLog: activityLog)
             print("Game with id \(gameId) has been reviewed. ReviewId: \(gameReview.id)")
         }
         catch {
@@ -103,7 +110,7 @@ final class UserManager {
         }
     }
     
-    func getGameRating(userId: String, gameId: String) async throws -> Double {
+    func getGameRating(userId: String, gameId: Int) async throws -> (Double, String) {
         let reviewLibraryCollection = db.collection("users").document(userId).collection("reviewLibrary")
         
         let reviewQuery = reviewLibraryCollection.whereField("gameId", isEqualTo: gameId)
@@ -111,7 +118,7 @@ final class UserManager {
         let querySnapshot = try await reviewQuery.getDocuments()
         
         if querySnapshot.isEmpty {
-            return -1.0 // No review found for the game
+            return (-1.0, "") // No review found for the game
         }
         
         guard let reviewDoc = querySnapshot.documents.first else {
@@ -120,8 +127,9 @@ final class UserManager {
         
         let reviewData = reviewDoc.data()
         let rating = reviewData["rating"] as? Double
+        let reviewText = reviewData["reviewText"] as? String
         
-        return rating!
+        return (rating ?? -1.0, reviewText ?? "")
         
     }
     
@@ -156,9 +164,12 @@ final class UserManager {
         for gameId in initialGames {
             gameIdList.append(gameId)
         }
-        let listObject = GameList(id: UUID(), title: title, userId: userId, games: gameIdList, isPublic: isPublic)
+        let listId = UUID()
+        let listObject = GameList(id: listId, title: title, userId: userId, games: gameIdList, isPublic: isPublic)
         
         try listRef.addDocument(from: listObject)
+        let activityLog = ActivityLog(id: UUID(), userId: userId, activityType: "List", timestamp: Date(), listId: listId, listName: title, gameId: nil, gameName: nil, reviewId: nil, rating: nil)
+        try await UserManager.shared.addActivityLog(activityLog: activityLog)
         
     }
     
@@ -188,7 +199,7 @@ final class UserManager {
         return gameLists
         
     }
-
+    
     func fetchGamePreview(gameId: String) async throws -> Game {
         let gameRef = db.collection("games").document(gameId)
         
@@ -205,4 +216,86 @@ final class UserManager {
         
     }
     
+    func searchUsers(searchText: String) async throws {
+        let userRef = db.collection("users")
+        let query = userRef
+            .whereField("display_name", isGreaterThanOrEqualTo: searchText)
+            .whereField("display_name", isLessThanOrEqualTo: searchText + "\u{f8ff}")
+        
+        try await query.getDocuments()
+    }
+    
+    func followUser(userIdToFollow: String, followedUserId: String) async throws {
+        let userRef = db.collection("users").document(userIdToFollow)
+        let followedUserRef = db.collection("users").document(followedUserId)
+        
+        try await userRef.updateData([
+            "following": FieldValue.arrayUnion([followedUserId])
+        ])
+        
+        try await followedUserRef.updateData([
+            "followers": FieldValue.arrayUnion([userIdToFollow])
+        ])
+        
+        
+        
+    }
+    
+    func getFollowersFollowingSets(userId: String) async throws -> (Set<String>, Set<String>) {
+        let userRef = db.collection("users").document(userId)
+        let userData = try await userRef.getDocument(as: User.self)
+        var followers: Set<String> = []
+        var following: Set<String> = []
+        for id in userData.followers {
+            followers.insert(id)
+        }
+        
+        for id in userData.following {
+            following.insert(id)
+        }
+        return (followers, following)
+    }
+    
+    func getSocialActivity(userId: String, following: Set<String>) async throws -> [ActivityLog] {
+        let activityRef = db.collection("activity")
+        var activityResults: [ActivityLog] = []
+        let query = activityRef.whereField("userId", in: Array(following)).limit(to: 20).order(by: "timestamp", descending: true)
+        do {
+            let querySnapshot = try await query.getDocuments()
+            
+            for document in querySnapshot.documents {
+                do {
+                    let activityLog = try document.data(as: ActivityLog.self)
+                    activityResults.append(activityLog)
+                } catch {
+                    print("Error decoding activity log: \(error)")
+                }
+            }
+        } catch {
+            print("Error getting activity documents: \(error)")
+        }
+        
+        return activityResults
+        
+    }
+    
+    func addActivityLog(activityLog: ActivityLog) async throws {
+        let activityRef = db.collection("activity")
+        try activityRef.document(activityLog.id.uuidString).setData(from: activityLog)
+    }
+    
+    func getDisplayNames(activityLogs: [ActivityLog]) async throws -> [String:String] {
+        let userCollectionRef = db.collection("users")
+        var displayNames: [String:String] = [:]
+        for activityLog in activityLogs {
+            if displayNames[activityLog.userId] == nil {
+                let userSnapshot = try await userCollectionRef.document(activityLog.userId).getDocument()
+                if let userData = userSnapshot.data(),
+                   let displayName = userData["display_name"] as? String {
+                    displayNames[activityLog.userId] = displayName
+                }
+            }
+        }
+        return displayNames
+    }
 }

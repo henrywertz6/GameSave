@@ -21,11 +21,13 @@ struct RootView: View {
             SearchView()
                 .tabItem { Label("Search", systemImage: "magnifyingglass")}
             MyListsView()
-            .tabItem { Label("Lists", systemImage: "list.bullet")}
-            SocialView()
-                .tabItem{ Label("Social", systemImage: "bolt")}
+                .tabItem { Label("Lists", systemImage: "list.bullet")}
             NavigationStack {
-                ProfileView(showSignInView: $showSignInView)
+                SocialView()
+            }
+            .tabItem{ Label("Social", systemImage: "bolt")}
+            NavigationStack {
+                MyProfileView(showSignInView: $showSignInView)
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
                             NavigationLink {
@@ -51,6 +53,7 @@ struct RootView: View {
             if let user = userEnvironment.user {
                 await userEnvironment.createSet()
                 await userEnvironment.createReviewSet()
+                await userEnvironment.createFollowersFollowingSets()
             }
         }
         .fullScreenCover(isPresented: $showSignInView, content: {

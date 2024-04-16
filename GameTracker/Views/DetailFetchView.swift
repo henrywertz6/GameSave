@@ -11,7 +11,6 @@ struct DetailFetchView: View {
     @EnvironmentObject var userEnvironment: UserEnvironment
     @StateObject var viewModel = DetailViewModel()
     var gameId: String
-    @State var rating: Double = 0
     
     var body: some View {
         VStack {
@@ -73,23 +72,33 @@ struct DetailFetchView: View {
                     
                 }
                 StarRatingSlider(
-                    count: $rating,
+                    count: $viewModel.rating,
                     minimum: 1,
                     maximum: 5,
                     spacing: 8
                 ) { active, i in
                     let index = Double(i)
-                    let isFilled = index < rating
-                    Image(systemName: isFilled ? ((rating - index).isEqual(to: 0.5) ? "star.leadinghalf.fill" : "star.fill") : "star")
+                    let isFilled = index < viewModel.rating
+                    Image(systemName: isFilled ? ((viewModel.rating - index).isEqual(to: 0.5) ? "star.leadinghalf.fill" : "star.fill") : "star")
                         .font(.system(size: 40))
                         .foregroundStyle(active ? .yellow : .gray.opacity(0.3))
                 }
-                
+                .disabled(isReviewed)
+                if isReviewed {
+                    Text(viewModel.reviewText)
+                } else {
+                    TextEditor(text: $viewModel.reviewText)
+                                    .frame(height: 150)
+                                    .border(Color.gray, width: 1)
+                                    .cornerRadius(5)
+                                    .padding(.horizontal)
+                                    .disabled(isReviewed)
+                }
                 Button {
                     Task {
                         guard let user = userEnvironment.user else {return}
                         if !isReviewed {
-                            try await UserManager.shared.addReview(userId: user.uid, gameId: String(gameId), rating: rating, reviewText: "")
+                            try await UserManager.shared.addReview(userId: user.uid, gameId: String(gameId), rating: viewModel.rating, reviewText: viewModel.reviewText, gameName: viewModel.game?.name ?? "")
                             userEnvironment.reviews.insert(String(gameId))
                         }
                         else {
@@ -119,7 +128,7 @@ struct DetailFetchView: View {
                 do {
                     guard let user = userEnvironment.user else {return}
                     viewModel.game = try await viewModel.fetchGameData(gameId: String(gameId))
-                    rating = try await UserManager.shared.getGameRating(userId: user.uid, gameId: String(gameId))
+                    try await viewModel.getGameRating(userId: user.uid, gameId: Int(gameId) ?? 0)
                     viewModel.isLoading = false
                 }
                 catch {

@@ -30,6 +30,7 @@ struct MyListsView: View {
                     Image(systemName: "plus")
                         .font(.title.weight(.semibold))
                         .padding()
+                        .frame(width: 60, height: 60)
                         .background(Color.blue)
                         .foregroundStyle(Color.white)
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)

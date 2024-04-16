@@ -12,6 +12,8 @@ import FirebaseFirestore
     @Published var user: AuthDataResultModel? = nil
     @Published var library: Set<String> = []
     @Published var reviews: Set<String> = []
+    @Published var followers: Set<String> = []
+    @Published var following: Set<String> = []
     
     
     func createSet() async {
@@ -19,7 +21,7 @@ import FirebaseFirestore
             library = try await UserManager.shared.getUserLibraryId(userId: user!.uid)
         }
         catch {
-            print(error)
+            print("Error creating gameLibrary set: \(error)")
         }
         
     }
@@ -29,9 +31,19 @@ import FirebaseFirestore
             reviews = try await UserManager.shared.getUserReviewSet(userId: user!.uid)
         }
         catch {
-            print(error)
+            print("Error creating review set: \(error)")
         }
     }
+    
+    func createFollowersFollowingSets() async {
+        do {
+            (followers, following) = try await UserManager.shared.getFollowersFollowingSets(userId: user!.uid)
+        } catch {
+            print("Error fetching following and followers sets: \(error)")
+        }
+    }
+    
+    
     
     
 }

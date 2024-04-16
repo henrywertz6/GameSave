@@ -1,29 +1,41 @@
 //
-//  ProfileView.swift
-//  Letterboxd4Games
+//  UserProfileView.swift
+//  GameTracker
 //
-//  Created by Henry Wertz on 2/18/24.
+//  Created by Henry Wertz on 4/9/24.
 //
 
 import SwiftUI
 
-
-struct ProfileView: View {
+struct UserProfileView: View {
     @EnvironmentObject var userEnvironment: UserEnvironment
     @StateObject private var viewModel = ProfileViewModel()
-    @Binding var showSignInView: Bool
+    var userId: String
+    var display_name: String
     
     var body: some View {
-        NavigationStack {
+        VStack {
             Image("chub")
                 .resizable()
-                .frame(width: 180, height: 180)
+                .frame(width: 125, height: 125)
                 .clipShape(Circle())
                 .padding(.horizontal)
-            if let user = userEnvironment.user {
-                Text(user.display_name!)
-                    .font(.title)
-                
+            Text(display_name)
+                .font(.title)
+            Button {
+                Task {
+                    try await viewModel.followUser(userIdToFollow: userEnvironment.user!.uid, followedUserId: userId)
+                    userEnvironment.following.insert(userId)
+                }
+            } label: {
+                Text("Follow")
+                    .padding()
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height:55)
+                    .background(Color.blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .padding(.vertical, 6)
             }
             ScrollView {
                 let columns = [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)]
@@ -43,29 +55,20 @@ struct ProfileView: View {
                         }
                     }
                 }
-                .navigationTitle("Browse")
+                
             }
-            Spacer()
-            
             
         }
-        .navigationTitle("Profile")
-        
         .onAppear {
-            
             Task {
-                guard let user = userEnvironment.user else {return}
-                try await viewModel.loadCurrentUser()
-                try await viewModel.fetchUserGameLibrary(userId: userEnvironment.user!.uid)
+                try await viewModel.fetchUserGameLibrary(userId: userId)
             }
         }
     }
-    
 }
 
 #Preview {
     NavigationStack {
-        ProfileView(showSignInView: .constant(false)).environmentObject(UserEnvironment())
+        UserProfileView(userId: "asdfasdfasdf", display_name: "username")
     }
-    
 }
