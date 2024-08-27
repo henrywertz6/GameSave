@@ -61,7 +61,7 @@
 		2FB47B6D2BC310BA00F1BB2A /* GamePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B6C2BC310BA00F1BB2A /* GamePreview.swift */; };
 		2FB47B6F2BC49A9900F1BB2A /* SocialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B6E2BC49A9900F1BB2A /* SocialViewModel.swift */; };
 		2FB47B712BC4B41400F1BB2A /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B702BC4B41400F1BB2A /* UserSearch.swift */; };
-		2FDA15EA2B83DC88003969EA /* GameTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15E92B83DC88003969EA /* GameTrackerApp.swift */; };
+		2FDA15EA2B83DC88003969EA /* GameSaveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15E92B83DC88003969EA /* GameSaveApp.swift */; };
 		2FDA15EC2B83DC88003969EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDA15EB2B83DC88003969EA /* ContentView.swift */; };
 		2FDA15EE2B83DC89003969EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA15ED2B83DC89003969EA /* Assets.xcassets */; };
 		2FDA15F12B83DC89003969EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FDA15F02B83DC89003969EA /* Preview Assets.xcassets */; };
@@ -119,7 +119,7 @@
 		2FB47B6E2BC49A9900F1BB2A /* SocialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewModel.swift; sourceTree = "<group>"; };
 		2FB47B702BC4B41400F1BB2A /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
 		2FDA15E62B83DC88003969EA /* GameTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FDA15E92B83DC88003969EA /* GameTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTrackerApp.swift; sourceTree = "<group>"; };
+		2FDA15E92B83DC88003969EA /* GameSaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSaveApp.swift; sourceTree = "<group>"; };
 		2FDA15EB2B83DC88003969EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2FDA15ED2B83DC89003969EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FDA15F02B83DC89003969EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		2FDA15DD2B83DC88003969EA = {
 			isa = PBXGroup;
 			children = (
-				2FDA15E82B83DC88003969EA /* GameTracker */,
+				2FDA15E82B83DC88003969EA /* GameSave */,
 				2FDA15E72B83DC88003969EA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2FDA15E82B83DC88003969EA /* GameTracker */ = {
+		2FDA15E82B83DC88003969EA /* GameSave */ = {
 			isa = PBXGroup;
 			children = (
 				2F377F102B8E989E0066404B /* Authentication */,
@@ -188,7 +188,7 @@
 				2FDA15F92B83DCB2003969EA /* ViewModels */,
 				2FDA15F82B83DCA9003969EA /* Models */,
 				2FDA15F72B83DCA1003969EA /* Views */,
-				2FDA15E92B83DC88003969EA /* GameTrackerApp.swift */,
+				2FDA15E92B83DC88003969EA /* GameSaveApp.swift */,
 				2F14B94A2BB279E4000257CC /* StarRatingSlider.swift */,
 				2F14B94C2BB27AF7000257CC /* SizeModifier.swift */,
 				2F14B9382BA8ECE5000257CC /* UserEnvironment.swift */,
@@ -197,7 +197,7 @@
 				2FDA15ED2B83DC89003969EA /* Assets.xcassets */,
 				2FDA15EF2B83DC89003969EA /* Preview Content */,
 			);
-			path = GameTracker;
+			path = GameSave;
 			sourceTree = "<group>";
 		};
 		2FDA15EF2B83DC89003969EA /* Preview Content */ = {
@@ -389,7 +389,7 @@
 				2FB47B5D2BBBB38600F1BB2A /* DetailViewModel.swift in Sources */,
 				2FDA16032B83DDE1003969EA /* Network.swift in Sources */,
 				2FB47B692BC1FC9A00F1BB2A /* ToastView.swift in Sources */,
-				2FDA15EA2B83DC88003969EA /* GameTrackerApp.swift in Sources */,
+				2FDA15EA2B83DC88003969EA /* GameSaveApp.swift in Sources */,
 				2F8E2A082BCF700F00DD24A6 /* FetchListView.swift in Sources */,
 				2F377F142B8E9A2F0066404B /* SignInEmailView.swift in Sources */,
 				2FB47B672BC1F30600F1BB2A /* AddGamesView.swift in Sources */,

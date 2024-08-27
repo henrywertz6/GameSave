@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseCore
 @main
-struct GameTrackerApp: App {
+struct GameSaveApp: App {
     init() {
         FirebaseApp.configure()
     }
