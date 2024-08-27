@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/henrywertz/Documents/COS-IW/GameTracker/GameSave.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
