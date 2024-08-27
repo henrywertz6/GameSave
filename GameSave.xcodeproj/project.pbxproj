@@ -316,7 +316,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2FDA15E12B83DC88003969EA /* Build configuration list for PBXProject "GameTracker" */;
+			buildConfigurationList = 2FDA15E12B83DC88003969EA /* Build configuration list for PBXProject "GameSave" */;
 			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -595,7 +595,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2FDA15E12B83DC88003969EA /* Build configuration list for PBXProject "GameTracker" */ = {
+		2FDA15E12B83DC88003969EA /* Build configuration list for PBXProject "GameSave" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FDA15F22B83DC89003969EA /* Debug */,

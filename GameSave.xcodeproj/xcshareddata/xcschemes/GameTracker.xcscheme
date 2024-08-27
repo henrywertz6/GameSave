@@ -17,7 +17,7 @@
                BlueprintIdentifier = "2FDA15E52B83DC88003969EA"
                BuildableName = "GameTracker.app"
                BlueprintName = "GameTracker"
-               ReferencedContainer = "container:GameTracker.xcodeproj">
+               ReferencedContainer = "container:GameSave.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,7 +46,7 @@
             BlueprintIdentifier = "2FDA15E52B83DC88003969EA"
             BuildableName = "GameTracker.app"
             BlueprintName = "GameTracker"
-            ReferencedContainer = "container:GameTracker.xcodeproj">
+            ReferencedContainer = "container:GameSave.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,7 +63,7 @@
             BlueprintIdentifier = "2FDA15E52B83DC88003969EA"
             BuildableName = "GameTracker.app"
             BlueprintName = "GameTracker"
-            ReferencedContainer = "container:GameTracker.xcodeproj">
+            ReferencedContainer = "container:GameSave.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
