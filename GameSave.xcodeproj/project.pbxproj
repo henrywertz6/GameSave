@@ -118,7 +118,7 @@
 		2FB47B6C2BC310BA00F1BB2A /* GamePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePreview.swift; sourceTree = "<group>"; };
 		2FB47B6E2BC49A9900F1BB2A /* SocialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewModel.swift; sourceTree = "<group>"; };
 		2FB47B702BC4B41400F1BB2A /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
-		2FDA15E62B83DC88003969EA /* GameTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FDA15E62B83DC88003969EA /* GameSave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameSave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDA15E92B83DC88003969EA /* GameSaveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSaveApp.swift; sourceTree = "<group>"; };
 		2FDA15EB2B83DC88003969EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2FDA15ED2B83DC89003969EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		2FDA15E72B83DC88003969EA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2FDA15E62B83DC88003969EA /* GameTracker.app */,
+				2FDA15E62B83DC88003969EA /* GameSave.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,9 +272,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2FDA15E52B83DC88003969EA /* GameTracker */ = {
+		2FDA15E52B83DC88003969EA /* GameSave */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2FDA15F42B83DC89003969EA /* Build configuration list for PBXNativeTarget "GameTracker" */;
+			buildConfigurationList = 2FDA15F42B83DC89003969EA /* Build configuration list for PBXNativeTarget "GameSave" */;
 			buildPhases = (
 				2FDA15E22B83DC88003969EA /* Sources */,
 				2FDA15E32B83DC88003969EA /* Frameworks */,
@@ -284,7 +284,7 @@
 			);
 			dependencies = (
 			);
-			name = GameTracker;
+			name = GameSave;
 			packageProductDependencies = (
 				2F377EF82B8D34DB0066404B /* FirebaseAuth */,
 				2F377EFA2B8D34DB0066404B /* FirebaseAuthCombine-Community */,
@@ -298,7 +298,7 @@
 				2F14B9512BB49043000257CC /* Typesense */,
 			);
 			productName = GameTracker;
-			productReference = 2FDA15E62B83DC88003969EA /* GameTracker.app */;
+			productReference = 2FDA15E62B83DC88003969EA /* GameSave.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -333,7 +333,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2FDA15E52B83DC88003969EA /* GameTracker */,
+				2FDA15E52B83DC88003969EA /* GameSave */,
 			);
 		};
 /* End PBXProject section */
@@ -540,7 +540,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GameTracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"GameSave/Preview Content\"";
 				DEVELOPMENT_TEAM = ABWH7GKTZG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -570,7 +570,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GameTracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"GameSave/Preview Content\"";
 				DEVELOPMENT_TEAM = ABWH7GKTZG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -604,7 +604,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2FDA15F42B83DC89003969EA /* Build configuration list for PBXNativeTarget "GameTracker" */ = {
+		2FDA15F42B83DC89003969EA /* Build configuration list for PBXNativeTarget "GameSave" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FDA15F52B83DC89003969EA /* Debug */,

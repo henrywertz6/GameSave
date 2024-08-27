@@ -13,34 +13,14 @@ import FirebaseCore
 class Network: ObservableObject {
     @Published var games: [Game] = []
     
-    private let apiClientID = "ewp5ogg1xjgarr85eh6al8c4rlafc9"
-    private let apiAuthorization = "Bearer 2ppze1nwlb60dt8uidkys7qhc6fnhx"
+    private let apiClientID = ProcessInfo.processInfo.environment["api_client_id"]
+    private let apiAuthorization = ProcessInfo.processInfo.environment["api_authorization"]
     init() {
         FirebaseApp.configure()
     }
     
 
-    
-//    func searchForGame(query: String) async throws -> GameResponse? {
-//        if let gameData = try await checkFirestoreForGame(query: query) {
-//            return gameData
-//        } else {
-//            let gameDataFromAPI = try await checkAPIForGameData(query: query)
-//            
-//            if let gameDataFromAPI = gameDataFromAPI {
-//                await updateFireStoreWithGameData(gameDataFromAPI)
-//            }
-//            
-//            return gameDataFromAPI
-//        }
-//    }
-    
-//    func checkFirestoreForGame(query: String) async throws -> GameResponse? {
-//        let db = Firestore.firestore()
-//        let gamesCollection = db.collection("games")
-//        
-//        
-//    }
+
     
     func checkAPIForGameData(query: String) async throws -> GameResponse? {
         let apiURL = "https://api.igdb.com/v4/games"

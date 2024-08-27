@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2FDA15E52B83DC88003969EA"
-               BuildableName = "GameTracker.app"
-               BlueprintName = "GameTracker"
+               BuildableName = "GameSave.app"
+               BlueprintName = "GameSave"
                ReferencedContainer = "container:GameSave.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,11 +44,23 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2FDA15E52B83DC88003969EA"
-            BuildableName = "GameTracker.app"
-            BlueprintName = "GameTracker"
+            BuildableName = "GameSave.app"
+            BlueprintName = "GameSave"
             ReferencedContainer = "container:GameSave.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "api_client_id"
+            value = "ewp5ogg1xjgarr85eh6al8c4rlafc9"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "api_authorization"
+            value = "Bearer 2ppze1nwlb60dt8uidkys7qhc6fnhx"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -61,8 +73,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2FDA15E52B83DC88003969EA"
-            BuildableName = "GameTracker.app"
-            BlueprintName = "GameTracker"
+            BuildableName = "GameSave.app"
+            BlueprintName = "GameSave"
             ReferencedContainer = "container:GameSave.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
