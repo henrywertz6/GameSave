@@ -167,7 +167,11 @@ final class UserManager {
         let listId = UUID()
         let listObject = GameList(id: listId, title: title, userId: userId, games: gameIdList, isPublic: isPublic)
         
-        try listRef.addDocument(from: listObject)
+        do {
+            try listRef.document(listId.uuidString).setData(from: listObject)
+        } catch {
+            print("Error creating list: \(error)")
+        }
         let activityLog = ActivityLog(id: UUID(), userId: userId, activityType: "List", timestamp: Date(), listId: listId, listName: title, gameId: nil, gameName: nil, reviewId: nil, rating: nil)
         try await UserManager.shared.addActivityLog(activityLog: activityLog)
         
@@ -297,5 +301,15 @@ final class UserManager {
             }
         }
         return displayNames
+    }
+    
+    func fetchListById(listId: UUID) async throws -> GameList? {
+        let listRef = db.collection("lists")
+        do {
+            return try await listRef.document(listId.uuidString).getDocument(as: GameList.self)
+        } catch {
+            print("Error fetching list: \(error)")
+            return nil
+        }
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailFetchView: View {
     @EnvironmentObject var userEnvironment: UserEnvironment
     @StateObject var viewModel = DetailViewModel()
+    @FocusState private var isTextEditorFocused: Bool
     var gameId: String
     
     var body: some View {
@@ -93,6 +94,7 @@ struct DetailFetchView: View {
                                     .cornerRadius(5)
                                     .padding(.horizontal)
                                     .disabled(isReviewed)
+                                    .focused($isTextEditorFocused)
                 }
                 Button {
                     Task {
@@ -122,6 +124,14 @@ struct DetailFetchView: View {
             
             
             
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") {
+                    isTextEditorFocused = false
+                }
+            }
         }
         .onAppear {
             Task {

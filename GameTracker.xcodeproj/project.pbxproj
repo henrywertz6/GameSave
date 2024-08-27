@@ -43,6 +43,7 @@
 		2F85773D2B9F8F950000E66B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F85773C2B9F8F950000E66B /* UserManager.swift */; };
 		2F8577412BA0B5EC0000E66B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8577402BA0B5EC0000E66B /* User.swift */; };
 		2F8577432BA0BF1B0000E66B /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8577422BA0BF1B0000E66B /* SignUpEmailView.swift */; };
+		2F8E2A082BCF700F00DD24A6 /* FetchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8E2A072BCF700F00DD24A6 /* FetchListView.swift */; };
 		2F9BE9F42BC61FBC000B61D2 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9BE9F32BC61FBC000B61D2 /* UserProfileView.swift */; };
 		2FB47B512BBB42B000F1BB2A /* MyListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B502BBB42B000F1BB2A /* MyListsView.swift */; };
 		2FB47B532BBB433D00F1BB2A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47B522BBB433D00F1BB2A /* ListViewModel.swift */; };
@@ -99,6 +100,7 @@
 		2F85773C2B9F8F950000E66B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2F8577402BA0B5EC0000E66B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2F8577422BA0BF1B0000E66B /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
+		2F8E2A072BCF700F00DD24A6 /* FetchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchListView.swift; sourceTree = "<group>"; };
 		2F9BE9F32BC61FBC000B61D2 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		2FB47B502BBB42B000F1BB2A /* MyListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListsView.swift; sourceTree = "<group>"; };
 		2FB47B522BBB433D00F1BB2A /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				2FB47B682BC1FC9A00F1BB2A /* ToastView.swift */,
 				2FB47B642BC123E000F1BB2A /* SocialView.swift */,
 				2FB47B6A2BC213F700F1BB2A /* ListView.swift */,
+				2F8E2A072BCF700F00DD24A6 /* FetchListView.swift */,
 				2F2AEDB92BA4C0B80048BC57 /* ForgotPasswordView.swift */,
 				2FB47B662BC1F30600F1BB2A /* AddGamesView.swift */,
 				2FB47B5A2BBBAFC900F1BB2A /* DetailFetchView.swift */,
@@ -387,6 +390,7 @@
 				2FDA16032B83DDE1003969EA /* Network.swift in Sources */,
 				2FB47B692BC1FC9A00F1BB2A /* ToastView.swift in Sources */,
 				2FDA15EA2B83DC88003969EA /* GameTrackerApp.swift in Sources */,
+				2F8E2A082BCF700F00DD24A6 /* FetchListView.swift in Sources */,
 				2F377F142B8E9A2F0066404B /* SignInEmailView.swift in Sources */,
 				2FB47B672BC1F30600F1BB2A /* AddGamesView.swift in Sources */,
 				2FB47B572BBB557700F1BB2A /* CreateListView.swift in Sources */,

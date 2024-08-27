@@ -17,7 +17,9 @@ struct SocialView: View {
                 
                 List(viewModel.socialActivity) { activityLog in
                     if activityLog.activityType == "List" {
-                        Text("\(viewModel.displayNames[activityLog.userId] ?? "") has created a list: \(activityLog.listName ?? "")")
+                        NavigationLink(destination: FetchListView(listId: activityLog.listId!)) {
+                            Text("\(viewModel.displayNames[activityLog.userId] ?? "") has created a list: \(activityLog.listName ?? "")")
+                        }
                     } else if activityLog.activityType == "Game" {
                         NavigationLink(destination: DetailFetchView(gameId: activityLog.gameId ?? "")) {
                             Text("\(viewModel.displayNames[activityLog.userId] ?? "") added \(activityLog.gameName ?? "") to their library")

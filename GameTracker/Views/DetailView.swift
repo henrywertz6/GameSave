@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailView: View {
     @EnvironmentObject var userEnvironment: UserEnvironment
     @StateObject var viewModel = DetailViewModel()
+    @FocusState private var isTextEditorFocused: Bool
     @State var game: Game
     
     var label = ""
@@ -86,6 +87,7 @@ struct DetailView: View {
                                 .cornerRadius(5)
                                 .padding(.horizontal)
                                 .disabled(isReviewed)
+                                .focused($isTextEditorFocused)
             }
             
             Button {
@@ -115,6 +117,14 @@ struct DetailView: View {
             
             
             
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") {
+                    isTextEditorFocused = false
+                }
+            }
         }
         .onAppear {
             Task {

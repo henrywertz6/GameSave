@@ -24,7 +24,7 @@ class ListViewModel: ObservableObject {
     @Published var currentList: GameList? = nil
     @Published var userLists: [GameList] = []
     @Published var games: [Game] = []
-    @Published var isLoading: Bool = false
+    @Published var isLoading: Bool = true
     
     
     func createList(userId: String, initialGames: [String], title: String, isPublic: Bool) async throws {
@@ -58,6 +58,10 @@ class ListViewModel: ObservableObject {
         let yearString = formatter.string(from: date)
         return yearString
         
+    }
+    
+    func fetchListById(listId: UUID) async throws {
+        self.currentList = try await UserManager.shared.fetchListById(listId: listId)
     }
     
 }
